@@ -1,20 +1,18 @@
 @import './base.scss';
+@import './font.scss';
 
 html{
   box-sizing: border-box;
   font-size: 62.5%;/*10px = 1rem */
 }
-html {
-box-sizing: border-box;
-font-size: 62.5%; /*10px = 1rem*/
-}
+
 *, *::before, *::after{
   box-sizing: inherit;
 } 
 body {
 display: flex;
 flex-direction: column;
-
+font-family: 'Poppins', sans-serif;
 }
 h1 {
 font-size: 3.2rem;
@@ -24,4 +22,7 @@ font-size: 2.8rem;
 }
 h3 {
 font-size: 2.2rem;
+}
+p,a{
+  font-size: 1.8rem;
 }
