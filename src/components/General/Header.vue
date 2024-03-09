@@ -4,7 +4,7 @@
         <nav class="nav">
             <router-link to="/">Inicio</router-link>
             <router-link to="/rent">Alquileres</router-link>
-            <p>Link3</p>
+            <router-link to="/sale">Ventas</router-link>
         </nav>
     </header>
 </template>
