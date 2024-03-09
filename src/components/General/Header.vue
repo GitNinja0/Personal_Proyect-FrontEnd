@@ -2,8 +2,8 @@
     <header>
         <h1 class="h1_header">Inmobiliaria Inmóvil</h1>
         <nav class="nav">
-            <p>Link1</p>
-            <p>Link2</p>
+            <router-link to="/">Inicio</router-link>
+            <router-link to="/rent">Alquileres</router-link>
             <p>Link3</p>
         </nav>
     </header>
@@ -23,6 +23,14 @@ header{
         gap: 1rem;
         align-items: center;
     }
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    color: bisque;
 }
 
 </style>
