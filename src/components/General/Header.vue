@@ -10,11 +10,13 @@
 </template>
 <style scoped lang="scss">
 header{
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: #fff;
     display: flex;    
     justify-content: space-around;
     align-items: center;
+    // position: fixed;
+    // width: 100%;
 
     .nav{
         display: flex;
