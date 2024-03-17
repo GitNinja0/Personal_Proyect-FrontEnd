@@ -2,6 +2,12 @@
 import Header from '@/components/General/Header.vue';
 import Footer from '@/components/General/Footer.vue';
 import CardSale from '@/components/CardSale.vue';
+import { useSaleStore } from '@/stores/CallStore';
+
+const store = useSaleStore();
+store.getSales();
+console.log(store.getSales());
+
 </script>
 <template>
     <header>
@@ -9,7 +15,12 @@ import CardSale from '@/components/CardSale.vue';
     </header>
     <main>
         <h2>Ventas</h2>
-        <CardSale />
+
+        <div id="cardSale_container">
+            <div v-for="sale in store.sales">
+                <CardSale :sale="sale"  />
+            </div>
+        </div>
     </main>
     <footer>
         <Footer />

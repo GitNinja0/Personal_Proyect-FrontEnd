@@ -1,21 +1,29 @@
+<script setup>
+const props = defineProps({
+    sale: {
+        type: Object,
+        required: true,
+    },
+});
+console.log('url de la imagen ', props.sale.image);
+</script>
 <template>
     <div class="card">
         <picture>
             <img class="image" src="../assets/images/imagen_prueba.jpeg" alt="imagen de casa de prueba">
         </picture>
         <div class="content">
-            <h3 class="title">Titulo de la propiedad</h3>
-            <p class="price">300 €/mes</p>
+            <h3 class="title">{{ sale.title }}</h3>
+            <p class="price">{{ sale.price }} €</p>
             <div class="general_content">
                 <div class="content_details">
-                    <p>3 hab</p>
-                    <p>3 baños</p>
-                    <p>Lugar</p>
-                    <p>Planta</p>
+                    <p>{{ sale.rooms }} hab</p>
+                    <p>{{ sale.bathrooms }} baños</p>
+                    <p>{{ sale.direction}}</p>
                 </div>
                 <div class="content_description">
                     <p>Descripcion</p> 
-                    <p>esta es una pequeña descripcion</p>
+                    <p>{{ sale.shortDescription }}</p>
                 </div>
             </div>
         </div>
