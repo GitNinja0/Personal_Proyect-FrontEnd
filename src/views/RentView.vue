@@ -31,5 +31,12 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+//   width: 100%;
+    
+  #cardRent_container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
 }
 </style>

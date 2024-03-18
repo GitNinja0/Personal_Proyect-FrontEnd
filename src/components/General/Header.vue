@@ -1,3 +1,8 @@
+<script>
+export default {
+    name: 'Header'
+}
+</script>
 <template>
     <header>
         <h1 class="h1_header">Inmobiliaria Inmóvil</h1>

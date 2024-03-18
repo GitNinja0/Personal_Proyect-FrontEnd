@@ -1,18 +1,18 @@
-// import { defineStore } from "pinia";
-// import { Axios } from "axios";
+import { defineStore } from "pinia";
+import axios from 'axios';
 
-// export const useContentStore = defineStore('content', {
-//     state: () => ({
-//       content: null,
-//       isLoading: false, 
-//     }),
-//     actions: {
-//       async fetchContentById(id_sale) {
-//         this.isLoading = true; 
-//         const response = await axios.get(`http://localhost:8080/api/v1/allevents/${id_sale}`);
-//         this.content = response.data;
-//         this.isLoading = false; 
-//     },
-//   },
+export const useContentSaleStore = defineStore('contentSale', {
+     state: () => ({
+       content: null,
+       isLoading: false, 
+     }),
+     actions: {
+       async fetchContentById(id) {
+         this.isLoading = true; 
+         const response = await axios.get(`http://localhost:8080/api/v1/sale/${id}`);
+         this.content = response.data;
+         this.isLoading = false; 
+     },
+   },
   
-//   });
+});

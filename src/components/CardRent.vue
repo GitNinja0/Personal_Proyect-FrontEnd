@@ -24,6 +24,7 @@ console.log('url de la imagen ', props.rent.image);
                 <div class="content_description">
                     <p>Descripcion</p> 
                     <p>{{ rent.shortDescription }}</p>
+                    
                 </div>
             </div>
         </div>

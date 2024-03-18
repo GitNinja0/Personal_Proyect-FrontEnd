@@ -1,3 +1,8 @@
+<script>
+export default {
+	name: 'Footer'
+}
+</script>
 <template>
     <footer>
 		<img id="logo" src="./../../assets/images/logoConectados.png" alt="" />

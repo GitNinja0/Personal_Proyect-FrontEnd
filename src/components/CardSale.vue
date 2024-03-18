@@ -6,6 +6,7 @@ const props = defineProps({
     },
 });
 console.log('url de la imagen ', props.sale.image);
+console.log(props.sale.id)
 </script>
 <template>
     <div class="card">
@@ -24,6 +25,7 @@ console.log('url de la imagen ', props.sale.image);
                 <div class="content_description">
                     <p>Descripcion</p> 
                     <p>{{ sale.shortDescription }}</p>
+                    <router-link :to="{path: `/details/${props.sale.id}`}" >Ver Más</router-link>
                 </div>
             </div>
         </div>
