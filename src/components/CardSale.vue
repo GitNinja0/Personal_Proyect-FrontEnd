@@ -11,7 +11,7 @@ console.log(props.sale.id)
 <template>
     <div class="card">
         <picture>
-            <img class="image" src="../assets/images/imagen_prueba.jpeg" alt="imagen de casa de prueba">
+            <div class="image" :style="{ 'background-image': 'url(' + sale.image + ')' }"></div>
         </picture>
         <div class="content">
             <h3 class="title">{{ sale.title }}</h3>
@@ -48,6 +48,8 @@ console.log(props.sale.id)
         .image{
             width: 90%;
             height: 90%;
+            background-position: center;
+            background-size: cover;
         }
     }
     .content{

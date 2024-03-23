@@ -4,6 +4,8 @@ import {onMounted, ref } from 'vue';
 import axios from 'axios';
 import Header from '@/components/General/Header.vue';
 import Footer from '@/components/General/Footer.vue';
+
+
 export default {
     components: {Header, Footer},
     setup() {
@@ -25,29 +27,57 @@ export default {
         return { content }
     }
 }
-
 </script>
 <template>
         <Header />
 
-    <div v-if="content">
-        <p>{{ content.image }}</p>
+        <div v-if="content" class="content">
+            <picture>
+                <div class="image" :style="{ 'background-image': 'url(' + content.image + ')' }"></div>
+            </picture>
+
+            <p>{{ content.image }}</p>
         <h2 class="title">{{ content.title }}</h2>
+
         <div class="details_content">    
             <p>{{ content.price }} €/Venta</p>
-            <p>{{ content.bathrooms }}</p>
-            <p>{{ content.rooms }}</p>
-        </div>
-        <div class="secuntary_content">
-            <p>{{ content.direction }}</p>
+            <p>{{ content.bathrooms }} Baños</p>
+            <p>{{ content.rooms }} Habitaciones</p>
             <p>{{ content.type }}</p>
         </div>
+
+        <div class="secundary_content">
+            <p>{{ content.direction }}</p>
+        </div>
+
         <p>{{ content.description }}</p>
 
+    </div>
+    <div class="contact">
+        <p>Contacto</p>
     </div>
         <Footer />
 
 </template>
 <style lang="scss" scoped>
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    .details_content{
+        display: flex;
+        column-gap: 1rem;
+        border-bottom: 1px #000 solid;
+    }
+    .secundary_content{
+        border-bottom: 1px #000 solid;
+    }
+    .image{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+}
 </style>
