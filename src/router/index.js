@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import RentView from '@/views/RentView.vue'
 import SaleView from '@/views/SaleView.vue'
 import DetailsSaleView from '@/views/DetailsSaleView.vue'
+import DetailsRentView from '@/views/DetailsRentView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,12 @@ const router = createRouter({
       path: '/details/:id',
       name: 'DetailsSale',
       component: DetailsSaleView,
+      props: true
+    },
+    {
+      path: '/detail/:id',
+      name: 'DetailsRent',
+      component: DetailsRentView,
       props: true
     }
   ]
