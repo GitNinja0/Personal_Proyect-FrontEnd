@@ -10,6 +10,7 @@ export default {
             <router-link to="/">Inicio</router-link>
             <router-link to="/rent">Alquileres</router-link>
             <router-link to="/sale">Ventas</router-link>
+            
         </nav>
     </header>
 </template>

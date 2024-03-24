@@ -10,7 +10,7 @@ console.log('url de la imagen ', props.rent.image);
 <template>
     <div class="card">
         <picture>
-            <img class="image" src="../assets/images/imagen_prueba.jpeg" alt="imagen de casa de prueba">
+            <div class="image" :style="{ 'background-image': 'url(' + rent.image + ')' }"></div>
         </picture>
         <div class="content">
             <h3 class="title">{{ rent.title }}</h3>
@@ -42,7 +42,7 @@ console.log('url de la imagen ', props.rent.image);
         width: 95%;
         margin: 2rem 0;
         border-radius: 10px;
-    }   
+    } 
     .button{
         background-color: #49f19d;
         width: 20%;
@@ -74,6 +74,8 @@ console.log('url de la imagen ', props.rent.image);
         .image{
             width: 90%;
             height: 90%;
+            background-position: center;
+            background-size: cover;
         }
     }
     .content{

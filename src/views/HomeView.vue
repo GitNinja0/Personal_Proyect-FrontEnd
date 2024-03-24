@@ -2,7 +2,7 @@
 import Header from '@/components/General/Header.vue';
 import Footer from '@/components/General/Footer.vue';
 import banner from '@/components/banner.vue';
-import CardProperty from '@/components/CardProperty.vue';
+import bannerPost from '@/components/bannerPost.vue'
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import CardProperty from '@/components/CardProperty.vue';
     <banner />
   </header>
   <main>
-    <CardProperty />
+    <bannerPost />
   </main>
   <footer>
     <Footer />

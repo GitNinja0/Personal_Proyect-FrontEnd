@@ -1,7 +1,5 @@
 <template>
-    <div class="banner">
-        <a class="button" href="">Ver Más</a>
-    </div>
+        <div class="banner"></div>
 </template>
 <style scoped lang="scss">
 .banner{
