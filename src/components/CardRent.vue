@@ -1,10 +1,23 @@
 <script setup>
+import axios from 'axios';
+
 const props = defineProps({
     rent: {
         type: Object,
         required: true,
     },
 });
+
+const deleteRent = async (id) => {
+
+    try {
+        await axios.delete(`http://localhost:8080/api/v1/rents/${id}`);
+        console.log('eliminado')
+        location.reload();
+    } catch (error) {
+        console.error(error)
+    }
+}
 console.log('url de la imagen ', props.rent.image);
 </script>
 <template>
@@ -30,6 +43,7 @@ console.log('url de la imagen ', props.rent.image);
             <div class="button">
                 <router-link :to="{path: `/detail/${props.rent.id}`}" >Ver Más</router-link>
             </div>
+            <button class="button_delete" @click="deleteRent(rent.id)">Eliminar Propiedad</button>
         </div>
         
     </div>
@@ -92,5 +106,13 @@ console.log('url de la imagen ', props.rent.image);
             
             
         }
+    }
+    .button_delete{
+        background-color: rgb(223, 50, 50);
+        width: 25rem;
+        border: none;
+        border-radius: 10px;
+        height: 4rem;
+        margin-bottom: 2rem;
     }
 </style>

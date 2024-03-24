@@ -1,10 +1,24 @@
 <script setup>
+import axios from 'axios';
+
 const props = defineProps({
     sale: {
         type: Object,
         required: true,
     },
 });
+
+const deleteSale = async (id) => {
+
+    try {
+        await axios.delete(`http://localhost:8080/api/v1/sale/${id}`);
+        console.log('eliminado')
+        location.reload();
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 console.log('url de la imagen ', props.sale.image);
 console.log(props.sale.id)
 </script>
@@ -30,8 +44,8 @@ console.log(props.sale.id)
             <div class="button">
                 <router-link :to="{path: `/details/${props.sale.id}`}" >Ver Más</router-link>
             </div>
+            <button class="button_delete" @click="deleteSale(sale.id)">Eliminar Propiedad</button>
         </div>
-        
     </div>
 </template>
 <style scoped lang="scss">
@@ -92,5 +106,13 @@ console.log(props.sale.id)
             
             
         }
+    }
+    .button_delete{
+        background-color: rgb(223, 50, 50);
+        width: 25rem;
+        border: none;
+        border-radius: 10px;
+        height: 4rem;
+        margin-bottom: 2rem;
     }
 </style>
