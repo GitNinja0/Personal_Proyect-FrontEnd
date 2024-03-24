@@ -5,6 +5,8 @@ import SaleView from '@/views/SaleView.vue'
 import DetailsSaleView from '@/views/DetailsSaleView.vue'
 import DetailsRentView from '@/views/DetailsRentView.vue'
 import FormPostView from '@/views/FormPostView.vue'
+import FormPutRentView from '@/views/FormPutRentView.vue'
+import FormPutSaleView from '@/views/FormPutSaleView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +42,18 @@ const router = createRouter({
       path:'/formPost',
       name: 'PostForm',
       component: FormPostView
+    },
+    {
+      path:'/formPut/:id',
+      name: 'FormPutRent',
+      component: FormPutRentView,
+      props: true
+    },
+    {
+      path:'/formPutSale/:id',
+      name: 'FormPutSale',
+      component: FormPutSaleView,
+      props: true
     }
   ]
 })

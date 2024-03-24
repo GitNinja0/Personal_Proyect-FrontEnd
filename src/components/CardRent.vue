@@ -43,6 +43,9 @@ console.log('url de la imagen ', props.rent.image);
             <div class="button">
                 <router-link :to="{path: `/detail/${props.rent.id}`}" >Ver Más</router-link>
             </div>
+            <div class="button">
+                <router-link :to="{path: `/formPut/${props.rent.id}`}" >Editar</router-link>
+            </div>
             <button class="button_delete" @click="deleteRent(rent.id)">Eliminar Propiedad</button>
         </div>
         
@@ -62,7 +65,7 @@ console.log('url de la imagen ', props.rent.image);
         width: 20%;
         height: 4rem;
         margin-bottom: 3rem;
-        border-radius: 10px;
+        border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -111,7 +114,7 @@ console.log('url de la imagen ', props.rent.image);
         background-color: rgb(223, 50, 50);
         width: 25rem;
         border: none;
-        border-radius: 10px;
+        border-radius: 4px;
         height: 4rem;
         margin-bottom: 2rem;
     }

@@ -28,7 +28,7 @@
     }
     img{
         margin-top: 2rem;
-        border-radius: 10px;
+        border-radius: 4px;
     }
 
     .button{
@@ -38,7 +38,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 4px;
         margin-bottom: 2rem;
 
         a{

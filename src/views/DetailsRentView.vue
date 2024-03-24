@@ -45,6 +45,7 @@ export default {
             <p>{{ content.bathrooms }} Baños</p>
             <p>{{ content.rooms }} Habitaciones</p>
             <p>{{ content.type }}</p>
+            <p>{{ content.status }}</p>
         </div>
 
         <div class="secundary_content">

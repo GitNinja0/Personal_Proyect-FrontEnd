@@ -44,6 +44,9 @@ console.log(props.sale.id)
             <div class="button">
                 <router-link :to="{path: `/details/${props.sale.id}`}" >Ver Más</router-link>
             </div>
+            <div class="button">
+                <router-link :to="{path: `/formPutSale/${props.sale.id}`}" >Editar</router-link>
+            </div>
             <button class="button_delete" @click="deleteSale(sale.id)">Eliminar Propiedad</button>
         </div>
     </div>
@@ -62,7 +65,7 @@ console.log(props.sale.id)
         width: 20%;
         height: 4rem;
         margin-bottom: 3rem;
-        border-radius: 10px;
+        border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -111,7 +114,7 @@ console.log(props.sale.id)
         background-color: rgb(223, 50, 50);
         width: 25rem;
         border: none;
-        border-radius: 10px;
+        border-radius: 4px;
         height: 4rem;
         margin-bottom: 2rem;
     }

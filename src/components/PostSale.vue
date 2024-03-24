@@ -21,7 +21,7 @@ export default {
  methods: {
     async submitForm(){
         try {
-            const response = await axios.post('http://localhost:8080/api/v1/rents', this.property);
+            const response = await axios.post('http://localhost:8080/api/v1/sale', this.property);
             console.log(response.data)
         } catch (error) {
             console.error(error)

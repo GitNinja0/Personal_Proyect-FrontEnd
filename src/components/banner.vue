@@ -10,14 +10,5 @@
     justify-content: center;
     align-items: flex-end;
 
-    .button{
-        background-color: #0000008c;
-        color: #fff;
-        text-decoration: none;
-        padding: 2rem;
-        border-radius: 5px;
-        margin-bottom: 8rem;
-        border: #fff solid 1px;
-    }
 }
 </style>

@@ -65,7 +65,7 @@ form{
     #button{
         background-color: #FFC300;
         border: none;
-        border-radius: 10px;
+        border-radius: 4px;
         height: 4rem;
         width: 20rem;
     }
