@@ -40,13 +40,15 @@ console.log('url de la imagen ', props.rent.image);
                     
                 </div>
             </div>
-            <div class="button">
-                <router-link :to="{path: `/detail/${props.rent.id}`}" >Ver Más</router-link>
+            <div class="buttons">
+                <div class="button">
+                    <router-link :to="{path: `/detail/${props.rent.id}`}" >Ver Más</router-link>
+                </div>
+                <div class="button">
+                    <router-link :to="{path: `/formPut/${props.rent.id}`}" >Editar</router-link>
+                </div>
+                <button class="button_delete" @click="deleteRent(rent.id)">Eliminar Propiedad</button>
             </div>
-            <div class="button">
-                <router-link :to="{path: `/formPut/${props.rent.id}`}" >Editar</router-link>
-            </div>
-            <button class="button_delete" @click="deleteRent(rent.id)">Eliminar Propiedad</button>
         </div>
         
     </div>
@@ -98,6 +100,8 @@ console.log('url de la imagen ', props.rent.image);
     .content{
         display: flex;
         flex-direction: column;
+        width: 90%;
+        margin: 2rem;
 
         .general_content{
             .content_details{
@@ -118,4 +122,18 @@ console.log('url de la imagen ', props.rent.image);
         height: 4rem;
         margin-bottom: 2rem;
     }
+@media (max-width: 1000px) {
+    .card{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 </style>

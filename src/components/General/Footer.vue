@@ -32,7 +32,7 @@ export default {
 			<p>Mapa web</p>
 		</div>
 		<p>
-			© 2024 GitNinja. Reservados todos los
+			© 2024 <a class="link" href="https://github.com/GitNinja0">GitNinja</a>. Reservados todos los
 			derechos.
 		</p>
 	</footer>
@@ -100,5 +100,8 @@ hr {
 			font-size: 1em;
 		}
 	}
+}
+.link{
+	color: #fff;
 }
 </style>

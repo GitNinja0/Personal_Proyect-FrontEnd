@@ -11,6 +11,7 @@ export default {
     setup() {
         const route = useRoute()
         const content = ref(null)
+        let image = ref('')
 
         onMounted(async ()=> {
             const id = route.params.id;
@@ -18,26 +19,28 @@ export default {
             try {
                 const response = await axios.get(`http://localhost:8080/api/v1/rents/${id}`, { cache: false });
 
-                console.log(response)
                 content.value = response.data
+
+                image.value = response.data.image
+                console.log(image.value)
+
                 console.log(response.data);
+                console.log(response.data.image);
             } catch (error) {
                 console.error("error: ",error)
             }
         })
-        return { content }
+        return { content, image }
     }
 }
 </script>
 <template>
         <Header />
 
-        <div v-if="content" class="content">
+        <div v-if="content && image" class="content">
             <picture>
-                <div class="image" :style="{ 'background-image': 'url(' + content.image + ')' }"></div>
+                <div class="image" :style="{ 'background-image': 'url(' + image + ')' }"></div>
             </picture>
-
-            <p>{{ content.image }}</p>
         <h2 class="title">{{ content.title }}</h2>
 
         <div class="details_content">    
@@ -52,10 +55,13 @@ export default {
             <p>{{ content.direction }}</p>
         </div>
 
-        <p>{{ content.description }}</p>
+        <div class="description">
+            <p>{{ content.description }}</p>
+        </div>
 
     </div>
     <div class="contact">
+        <h3>Contacta con el agente</h3>
         <ContactForm />
     </div>
         <Footer />
@@ -76,10 +82,17 @@ export default {
         border-bottom: 1px #000 solid;
     }
     .image{
-            width: 100%;
-            height: 100%;
+            margin-top: 2rem;
+            width: 100rem;
+            height: 50rem;
             background-position: center;
             background-size: cover;
         }
+}
+.description{
+    width: 90%;
+}
+h3{
+    text-align: center;
 }
 </style>

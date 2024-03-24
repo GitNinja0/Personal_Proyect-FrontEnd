@@ -41,13 +41,15 @@ console.log(props.sale.id)
                     <p>{{ sale.shortDescription }}</p>
                 </div>
             </div>
-            <div class="button">
-                <router-link :to="{path: `/details/${props.sale.id}`}" >Ver Más</router-link>
+            <div class="buttons">
+                <div class="button">
+                    <router-link :to="{path: `/details/${props.sale.id}`}" >Ver Más</router-link>
+                </div>
+                <div class="button">
+                    <router-link :to="{path: `/formPutSale/${props.sale.id}`}" >Editar</router-link>
+                </div>
+                <button class="button_delete" @click="deleteSale(sale.id)">Eliminar Propiedad</button>
             </div>
-            <div class="button">
-                <router-link :to="{path: `/formPutSale/${props.sale.id}`}" >Editar</router-link>
-            </div>
-            <button class="button_delete" @click="deleteSale(sale.id)">Eliminar Propiedad</button>
         </div>
     </div>
 </template>
@@ -98,6 +100,8 @@ console.log(props.sale.id)
     .content{
         display: flex;
         flex-direction: column;
+        width: 90%;
+        margin: 2rem;
 
         .general_content{
             .content_details{
@@ -118,4 +122,18 @@ console.log(props.sale.id)
         height: 4rem;
         margin-bottom: 2rem;
     }
+@media (max-width: 1000px) {
+    .card{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 </style>

@@ -17,7 +17,7 @@ console.log(store.getSales());
         <h2>Ventas</h2>
 
         <div id="cardSale_container">
-            <div v-for="sale in store.sales">
+            <div class="container_card" v-for="sale in store.sales">
                 <CardSale :sale="sale"  />
             </div>
         </div>
@@ -31,5 +31,14 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  #cardSale_container{
+    margin: 2rem;
+
+    .container_card{
+        display: flex;
+        justify-content: center;
+    }
+  }
 }
 </style>

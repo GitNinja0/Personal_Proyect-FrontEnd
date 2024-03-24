@@ -17,7 +17,7 @@ console.log(store.getRents());
     <main>
         <h2>Alquileres</h2>
         <div id="cardRent_container">
-            <div v-for="rent in store.rents">
+            <div class="container_card" v-for="rent in store.rents">
                 <CardRent :rent="rent"/>
             </div>
         </div>
@@ -31,12 +31,14 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-//   width: 100%;
-    
+
   #cardRent_container{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+    margin: 2rem;
+
+    .container_card{
+        display: flex;
+        justify-content: center;
+    }
   }
 }
 </style>
