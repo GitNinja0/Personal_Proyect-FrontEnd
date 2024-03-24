@@ -4,10 +4,11 @@ import {onMounted, ref } from 'vue';
 import axios from 'axios';
 import Header from '@/components/General/Header.vue';
 import Footer from '@/components/General/Footer.vue';
+import ContactForm from '@/components/ContactForm.vue';
 
 
 export default {
-    components: {Header, Footer},
+    components: {Header, Footer, ContactForm},
     setup() {
         const route = useRoute()
         const content = ref(null)
@@ -54,7 +55,7 @@ export default {
 
     </div>
     <div class="contact">
-        <p>Contacto</p>
+        <ContactForm />
     </div>
         <Footer />
 
